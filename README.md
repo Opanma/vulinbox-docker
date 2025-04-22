@@ -8,10 +8,20 @@ Vulinbox-docker是把上面的vulinbox靶场环境直接打包成Dockerfile，�
 ### 为什么搞这个
 纯粹是为了给靶场搞一个单独的环境，放在公网方便测试，因为靶场能执行命令等操作，如果直接放在公网可能会被破坏。
 ### 使用方式
+#### 1.自己下载靶场文件、Dockerfile、然后编译Docker镜像
 ```
 git clone  https://github.com/Opanma/vulinbox-docker.git
 cd vulinbox-docker
 wget  https://oss-qn.yaklang.com/vulinbox/latest/vulinbox_linux_amd64
 docker build -t vulinbox-image .
 docker run -d -p 8787:8787 vulinbox-image
+```
+#### 2.直接拉docker镜像然后使用
+```
+docker pull opanma/vulinbox-image 
+docker run -d -p 8787:8787 opanma/vulinbox-image
+```
+#### 3.直接在线靶场使用
+```
+暂时不对外公开，测试稳定后公开
 ```
